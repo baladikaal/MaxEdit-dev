@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script SYSTEM "script.dtd">
+<script author="FVANDERHAM" scriptname="V7600_02">
+<description>Add property for blacklist support</description>
+
+<statements>
+
+<add_property name="ontracks.maxedit.blacklist" 
+	description="MaxEdit Blacklisted object/attribute pairs, separate each OBJECT.ATTRIBUTE with a comma" 
+	maxtype="ALN" 
+	secure_level="secure"
+	scope="global"
+	live_refresh="true"
+	required="false"
+	online_changes="true"
+	user_defined="false"
+	encrypted="false"
+	masked="false"	
+	value=""/>
+
+</statements>
+</script>

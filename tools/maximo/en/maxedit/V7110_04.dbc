@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script SYSTEM "script.dtd">
+<script author="FVANDERHAM" scriptname="V7110_04">
+<description>Add Support for Person</description>
+
+<statements>
+
+<add_sigoption visible="true" app="PERSON" optionname="OT_RENAME" 
+			description="Rename Person" grantapp="PERSON" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<additional_app_menu app="PERSON" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+
+<freeform description="Force set tab display on menus to MAIN">
+<sql target="all">update maxmenu set tabdisplay='MAIN' where menutype='APPMENU' and elementtype='OPTION' and keyvalue='OT_RENAME'
+;</sql>	
+</freeform>
+
+
+<create_relationship parent="PERSON" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+
+</statements>
+</script>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE script SYSTEM "script.dtd">
+<script author="FVANDERHAM" scriptname="maxedit_rename">
+<description>Artifacts for MaxEdit Rename</description>
+<statements>
+<add_sigoption visible="true" app="ASSET" optionname="OT_RENAME" 
+			description="Rename Asset" grantapp="ASSET" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="LOCATION" optionname="OT_RENAME" 
+			description="Rename Location" grantapp="LOCATION" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="WOTRACK" optionname="OT_RENAME" 
+			description="Rename Work Order" grantapp="WOTRACK" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="ITEM" optionname="OT_RENAME" 
+			description="Rename Item" grantapp="ITEM" grantoption="SAVE" esigenabled="false" langcode="EN" />
+
+<add_sigoption visible="true" app="JOBPLAN" optionname="OT_RENAME" 
+			description="Rename Job Plan" grantapp="JOBPLAN" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="PM" optionname="OT_RENAME" 
+			description="Rename PM" grantapp="PM" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="PR" optionname="OT_RENAME" 
+			description="Rename Purchase Request" grantapp="PR" grantoption="CANCEL" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="PO" optionname="OT_RENAME" 
+			description="Rename Purchase Order" grantapp="PO" grantoption="CANCEL" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="ROUTES" optionname="OT_RENAME" 
+			description="Rename Route" grantapp="ROUTES" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="INVOICE" optionname="OT_RENAME" 
+			description="Rename Invoice" grantapp="INVOICE" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<add_sigoption visible="true" app="COMPANY" optionname="OT_RENAME" 
+			description="Rename Company" grantapp="COMPANY" grantoption="DELETE" esigenabled="false" langcode="EN" />
+  
+<additional_app_menu app="ASSET" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="LOCATION" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="WOTRACK" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="ITEM" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="JOBPLAN" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="PM" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="PR" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="PO" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="ROUTES" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="INVOICE" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+<additional_app_menu app="COMPANY" type="action" menu_position="last">
+	<app_menu_header headerdescription="Cohesive">
+		<app_menu_option option="OT_RENAME" tabdisplay="MAIN"/>
+	</app_menu_header>
+</additional_app_menu>
+
+
+<freeform description="Force set tab display on menus to MAIN">
+<sql target="all">update maxmenu set tabdisplay='MAIN' where menutype='APPMENU' and elementtype='OPTION' and keyvalue='OT_RENAME'
+;</sql>	
+</freeform>
+<!-- 
+<freeform description="Cek menu Ontracks vs OT_RENAME">
+  <sql target="all">
+    select menutype, elementtype, keyvalue, headerdescription, moduleapp, position
+    from maxmenu
+    where upper(headerdescription) like '%ONTRACKS%'
+       or upper(keyvalue) like '%OT_RENAME%';
+  </sql>
+</freeform>
+
+<freeform description="Cek aplikasi OT_RENAME">
+  <sql target="all">
+    select app, description
+    from maxapps
+    where upper(app)='OT_RENAME' or upper(description) like '%ONTRACKS%';
+  </sql>
+</freeform> -->
+
+
+
+<define_table persistent="false" type="system" object="OTOBJECTRENAME" description="Ontracks Object Rename" 
+			service="SYSTEM" classname="ontracks.app.maxedit.virtual.ObjectRenameSet" 
+			mainobject="false" internal="false">
+			
+	<attrdef attribute="ITEMSETID" title="Item set" remarks="Item set" sameasobject="SETS" 
+			sameasattribute="SETID" persistent="false" haslongdesc="false" required="false" mustbe="false" 
+			ispositive="false" canautonum="false" userdefined="false" />
+			
+	<attrdef attribute="ORGID" classname="psdi.app.site.FldOrganizationID" title="Organization" remarks="Organization Identifier" 
+			sameasobject="ORGANIZATION" sameasattribute="ORGID" persistent="false" haslongdesc="false" 
+			required="false" mustbe="false" ispositive="false" canautonum="false" userdefined="false" />
+			
+	<attrdef attribute="SITEID" classname="psdi.app.site.FldSiteID" title="Site" remarks="Site" 
+			sameasobject="SITE" sameasattribute="SITEID" persistent="false" haslongdesc="false" 
+			required="false" mustbe="false" ispositive="false" canautonum="false" userdefined="false" />
+			
+	<attrdef attribute="BACKUPTAKEN" maxtype="YORN" title="Backup taken" remarks="Backup taken" 
+			length="1" scale="0" persistent="false" haslongdesc="false" required="true" mustbe="false" 
+			ispositive="false" canautonum="false" userdefined="false" />
+			
+	<attrdef attribute="DRYRUN" maxtype="YORN" title="Dry run" remarks="Dry run" length="1" scale="0" 
+			persistent="false" haslongdesc="false" required="true" mustbe="false" ispositive="false" 
+			canautonum="false" userdefined="false" />
+			
+	<attrdef attribute="OLDNAME" maxtype="UPPER" title="Old Name" remarks="Old Name" length="255" 
+			persistent="false" haslongdesc="false" required="false" mustbe="false" ispositive="false" 
+			canautonum="false" userdefined="false" />
+			
+	<attrdef attribute="NEWNAME" maxtype="UPPER" classname="ontracks.app.maxedit.virtual.FldNewName" 
+			title="New Name" remarks="New Name" length="255" persistent="false" haslongdesc="false" 
+			required="false" mustbe="false" ispositive="false" canautonum="false" userdefined="false" />
+			
+	<attrdef attribute="OBJECTNAME" maxtype="UPPER" title="Object name" remarks="Object name" 
+			sameasobject="MAXOBJECT" sameasattribute="OBJECTNAME" length="30" persistent="false" 
+			haslongdesc="false" required="false" mustbe="true" ispositive="false" canautonum="false" 
+			userdefined="false" />
+
+	<attrdef attribute="STATUS" maxtype="CLOB" title="Status" remarks="Status" 
+			persistent="false" required="false" 
+			mustbe="false" ispositive="false" canautonum="false" userdefined="false" />
+</define_table>
+
+<!-- 
+
+<add_attributes object="OTOBJECTRENAME">
+	<attrdef attribute="STATUS" maxtype="CLOB" title="Status" remarks="Status" 
+			persistent="false" required="false" 
+			mustbe="false" ispositive="false" canautonum="false" userdefined="false" />
+</add_attributes>	
+
+ -->
+
+<create_relationship parent="ASSET" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="LOCATIONS" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="ITEM" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="WORKORDER" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="JOBPLAN" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="PM" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="PR" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="PO" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="ROUTES" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="INVOICE" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+<create_relationship parent="COMPANIES" name="OTOBJECTRENAME" child="OTOBJECTRENAME" whereclause="" 
+			remarks="Relationship to the virtual OTOBJECTRENAME object" />
+
+</statements>
+</script>

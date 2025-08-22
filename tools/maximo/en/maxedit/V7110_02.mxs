@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<updatescript version="">
+   <systemlib apptype="webclient" id="library">
+      <add container="library" control="dialog">
+         <set property="beanclass" value="ontracks.webclient.beans.ObjectRenameBean"/>
+         <set property="id" value="ot_rename"/>
+         <set property="label" value="Cohesive Rename Object"/>
+         <set property="relationship" value="OTOBJECTRENAME"/>
+      </add>
+      <add container="ot_rename" control="section">
+         <set property="id" value="ot_rename_grid1"/>
+      </add>
+      <add container="ot_rename_grid1" control="sectionrow">
+         <set property="id" value="ot_rename_grid0_row1"/>
+      </add>
+      <add container="ot_rename_grid0_row1" control="sectioncol">
+         <set property="id" value="ot_rename_grid0_row1_col1"/>
+      </add>
+      <add container="ot_rename_grid0_row1_col1" control="section">
+         <set property="id" value="ot_rename_grid0_r1c1_section"/>
+      </add>
+      <add container="ot_rename_grid0_r1c1_section" control="helpgrid">
+         <set property="id" value="ot_rename_grid1_1"/>
+         <set property="innerhtml" value="WARNING: renaming an object can take a long time to complete, depending on how many records reference this object"/>
+      </add>
+      <add container="ot_rename" control="section">
+         <set property="id" value="ot_rename_grid1b"/>
+      </add>
+      <add container="ot_rename_grid1b" control="sectionrow">
+         <set property="id" value="ot_rename_grid1_row2"/>
+      </add>
+      <add container="ot_rename_grid1_row2" control="sectioncol">
+         <set property="id" value="ot_rename_grid1_row2_col1"/>
+      </add>
+      <add container="ot_rename_grid1_row2_col1" control="section">
+         <set property="id" value="ot_rename_grid1_r2c1_section"/>
+      </add>
+      <add container="ot_rename_grid1_r2c1_section" control="checkbox">
+         <set property="dataattribute" value="backuptaken"/>
+         <set property="id" value="ot_rename_sec1_1"/>
+      </add>
+      <add container="ot_rename_grid1_r2c1_section" control="checkbox">
+         <set property="dataattribute" value="dryrun"/>
+         <set property="id" value="ot_rename_sec1_5"/>
+      </add>
+      <add container="ot_rename_grid1_r2c1_section" control="textbox">
+         <set property="dataattribute" value="itemsetid"/>
+         <set property="id" value="ot_rename_itemsetid"/>
+      </add>
+      <add container="ot_rename_grid1_r2c1_section" control="textbox">
+         <set property="dataattribute" value="orgid"/>
+         <set property="id" value="ot_rename_orgid"/>
+      </add>
+      <add container="ot_rename_grid1_r2c1_section" control="textbox">
+         <set property="dataattribute" value="siteid"/>
+         <set property="id" value="ot_rename_siteid"/>
+      </add>
+      <add container="ot_rename_grid1_r2c1_section" control="textbox">
+         <set property="dataattribute" value="oldname"/>
+         <set property="id" value="ot_rename_sec1_2"/>
+      </add>
+      <add container="ot_rename_grid1_r2c1_section" control="textbox">
+         <set property="dataattribute" value="newname"/>
+         <set property="id" value="ot_rename_sec1_3"/>
+      </add>
+      <add container="ot_rename" control="section">
+         <set property="id" value="ot_rename_grid1c"/>
+      </add>
+      <add container="ot_rename_grid1c" control="buttongroup">
+         <set property="align" value="center"/>
+         <set property="id" value="ot_rename_grid1c_section"/>
+      </add>
+      <add container="ot_rename_grid1c_section" control="pushbutton">
+         <set property="id" value="ot_rename_on_button"/>
+         <set property="label" value="Start Rename"/>
+         <set property="mxevent" value="rename_START"/>
+      </add>
+      <add container="ot_rename" control="section">
+         <set property="id" value="ot_rename_grid2"/>
+      </add>
+      <add container="ot_rename_grid2" control="multilinetextbox">
+         <set property="columns" value="40"/>
+         <set property="dataattribute" value="status"/>
+         <set property="id" value="ot_rename_grid2_1"/>
+         <set property="inputmode" value="readonly"/>
+         <set property="rows" value="10"/>
+      </add>
+      <add container="ot_rename" control="section">
+         <set property="id" value="ot_rename_grid3"/>
+      </add>
+      <add container="ot_rename_grid3" control="buttongroup">
+         <set property="align" value="center"/>
+         <set property="id" value="ot_rename_refresh_section"/>
+      </add>
+      <add container="ot_rename_refresh_section" control="pushbutton">
+         <set property="id" value="ot_rename_refresh_button"/>
+         <set property="label" value="Refresh Status"/>
+         <set property="mxevent" value="refreshStatus"/>
+      </add>
+      <add container="ot_rename" control="buttongroup">
+         <set property="id" value="ot_rename_2"/>
+      </add>
+      <add container="ot_rename_2" control="pushbutton">
+         <set property="default" value="true"/>
+         <set property="id" value="ot_rename_2_1"/>
+         <set property="label" value="Close"/>
+         <set property="mxevent" value="dialogok"/>
+      </add>
+   </systemlib>
+</updatescript>
